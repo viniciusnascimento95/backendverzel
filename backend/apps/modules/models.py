@@ -16,4 +16,9 @@ class Module(TimestampableMixin):
             verbose_name_plural = "Modules"
 
     objects = models.Manager()
+
+    def __str__(self):
+        return "Nome do Modulo: %s id: %s" % (self.name, self.id)
     
+    # def __str__(self):
+    #     return self.name

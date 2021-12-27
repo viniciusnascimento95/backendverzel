@@ -43,11 +43,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+     # Django rest framework
+    # https://www.django-rest-framework.org/
+    'rest_framework',
+
     #your apps
     # 'apps.accounts',
-    # 'backendverzel.apps.classes',
-    'backend.apps.modules.apps.ModulesConfig'
+    
+    'backend.apps.classes.apps.ClassesConfig',
+    'backend.apps.modules.apps.ModulesConfig',
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
