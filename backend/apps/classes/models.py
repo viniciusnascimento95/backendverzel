@@ -11,5 +11,5 @@ class TimestampableMixin(models.Model):
 
 class Class(TimestampableMixin):
     name = models.CharField(max_length=200, null=True)
-    module_id = models.ForeignKey(Module, verbose_name='Modulo', on_delete=models.CASCADE)
+    module = models.ForeignKey(Module, verbose_name='Modulo', on_delete=models.CASCADE)
     date = models.DateField(default=timezone.now)

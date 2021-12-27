@@ -19,13 +19,16 @@ from django.urls import include, path
 # RestFramework
 from rest_framework import routers
 
+from backend.apps.accounts.viewsets import UserViewSet 
 from backend.apps.modules.viewsets import ModuleViewSet 
 from backend.apps.classes.viewsets import ClassViewSet 
 
 router = routers.DefaultRouter()
 
+router.register(r'users', UserViewSet)
 router.register(r'modules', ModuleViewSet)
 router.register(r'classes', ClassViewSet)
+
 
 urlpatterns = [
     # path('api-auth/', include('rest_framework.urls')),

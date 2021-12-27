@@ -7,6 +7,6 @@ class ClassViewSet(viewsets.ModelViewSet):
     """
     Class API resource
     """
-    queryset = Class.objects.all()
+    queryset = Class.objects.all().order_by('name')
     serializer_class = ClassSerializer
     # filter_class = ModuleFilter

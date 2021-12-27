@@ -48,8 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #your apps
-    # 'apps.accounts',
-    
+    'backend.apps.accounts.apps.AccountsConfig',    
     'backend.apps.classes.apps.ClassesConfig',
     'backend.apps.modules.apps.ModulesConfig',
 ]
@@ -58,8 +57,10 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',       
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+        'PAGE_SIZE': 5,
 }
 
 MIDDLEWARE = [
