@@ -19,6 +19,8 @@ from django.urls import include, path
 # RestFramework
 from rest_framework import routers
 
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 from backend.apps.accounts.viewsets import UserViewSet 
 from backend.apps.modules.viewsets import ModuleViewSet 
 from backend.apps.classes.viewsets import ClassViewSet 
@@ -34,4 +36,7 @@ urlpatterns = [
     # path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
+    
+    # path('token/' , TokenObtainPairView.as_view()),
+    # path('token/refresh/' , TokenRefreshView.as_view()),
 ]
