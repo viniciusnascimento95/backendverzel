@@ -1,6 +1,9 @@
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets, permissions, generics
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from backend.apps.modules.models import Module
+from backend.apps.classes.models import Class
 from backend.apps.modules.serializers import ModuleSerializer
 
 class ModuleViewSet(viewsets.ModelViewSet):
@@ -9,9 +12,3 @@ class ModuleViewSet(viewsets.ModelViewSet):
     """
     queryset = Module.objects.all().order_by('name')
     serializer_class = ModuleSerializer
-    # http_method_names = ['get']
-    # filter_class = ModuleFilter
-    
-# class ModuleClassViewSet(viewsets.ModelViewSet):
-#     classes = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-    
