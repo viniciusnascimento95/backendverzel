@@ -18,11 +18,10 @@ from django.urls import include, path
 
 # RestFramework
 from rest_framework import routers
-
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from backend.apps.accounts.viewsets import UserViewSet 
-from backend.apps.modules.viewsets import ModuleViewSet 
+from backend.apps.modules.viewsets import ModuleViewSet, DashboardAPIView 
 from backend.apps.classes.viewsets import ClassViewSet 
 
 router = routers.DefaultRouter()
@@ -32,9 +31,11 @@ router.register(r'modules', ModuleViewSet)
 router.register(r'classes', ClassViewSet)
 
 urlpatterns = [
-    # path('api-auth/', include('rest_framework.urls')),
-    
+    # path('api-auth/', include('rest_framework.urls')),    
     path('api/', include(router.urls)),
+    # api public
+    path('api/dashboard', DashboardAPIView.as_view()),
+    # django admin
     path('admin/', admin.site.urls),
    
     # path('token/' , TokenObtainPairView.as_view()),

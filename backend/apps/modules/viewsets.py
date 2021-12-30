@@ -1,10 +1,8 @@
-from rest_framework import viewsets, permissions, generics
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework import viewsets, mixins
+from rest_framework.generics import GenericAPIView
 
 from backend.apps.modules.models import Module
-from backend.apps.classes.models import Class
-from backend.apps.modules.serializers import ModuleSerializer
+from backend.apps.modules.serializers import ModuleSerializer, DashboardSerializer
 
 class ModuleViewSet(viewsets.ModelViewSet):
     """
@@ -12,3 +10,11 @@ class ModuleViewSet(viewsets.ModelViewSet):
     """
     queryset = Module.objects.all().order_by('name')
     serializer_class = ModuleSerializer
+    
+class DashboardAPIView(mixins.ListModelMixin, GenericAPIView):
+    
+    queryset = Module.objects.all().order_by('name')
+    serializer_class = DashboardSerializer
+    
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
