@@ -18,9 +18,11 @@ from django.urls import include, path
 
 # RestFramework
 from rest_framework import routers
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.views import TokenObtainPairView ,TokenRefreshView
 
-from backend.apps.accounts.viewsets import UserViewSet 
+from backend.apps.accounts.serializers import MyTokenObtainPairView
+
+from backend.apps.accounts.viewsets import UserViewSet
 from backend.apps.modules.viewsets import ModuleViewSet, DashboardAPIView 
 from backend.apps.classes.viewsets import ClassViewSet 
 
@@ -36,8 +38,9 @@ urlpatterns = [
     # api public
     path('api/dashboard', DashboardAPIView.as_view()),
     # django admin
-    path('admin/', admin.site.urls),
-   
-    # path('token/' , TokenObtainPairView.as_view()),
-    # path('token/refresh/' , TokenRefreshView.as_view()),
+    path('admin/', admin.site.urls),  
+    # path('api/token' , TokenObtainPairView.as_view()),
+    path('api/token' , MyTokenObtainPairView.as_view()),
+    
+    path('api/token/refresh' , TokenRefreshView.as_view()),
 ]
