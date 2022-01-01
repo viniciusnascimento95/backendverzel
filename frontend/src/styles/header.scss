@@ -1,0 +1,24 @@
+@import './config.scss';
+
+.container-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-color: $lightGrayColor;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+
+    padding-top: 24px;
+    padding-bottom: 24px;   
+   
+    h3 {
+        margin-left: 20px;
+    }
+
+    span {
+        margin-right: 20px;
+    }
+    
+}

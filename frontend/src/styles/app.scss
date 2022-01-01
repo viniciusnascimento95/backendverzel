@@ -1,0 +1,37 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+@font-face {
+    font-family: 'Roboto Regular', sans-serif;
+    font-style: normal;    
+    font-weight: normal;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+}
+
+
+html {
+    font-family: 'Roboto Regular', sans-serif;
+}
+
+body {
+    font-family: 'Roboto Regular', sans-serif;
+    li {
+        list-style-type: none;
+    }
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px;
+}
+
+@import './config.scss';
+@import './login.scss';
+@import './header.scss';

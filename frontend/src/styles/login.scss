@@ -1,0 +1,93 @@
+@import './config.scss';
+
+
+.container-login {
+
+    p {
+        max-width: 280px;
+        text-align: center;
+        color: $errorColor;
+        font-weight: bold;
+    }
+  
+    button {
+        margin-top: 12px;
+        width: 100%;
+        height: 56px;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+        color: white;
+        border-radius: 12px;
+        font-size: 17px;
+    }
+
+    .input{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+
+        input {
+            // margin-top: 12px;
+            margin-bottom: 18px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.01em;
+            color: $primaryColor;
+            width: 240px;
+            border-radius: 3px;
+            padding-bottom: 7px;
+
+            border-top-width: 0px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-color: $mediumGrayColor;
+            border-bottom-width: 0.01em;
+
+            outline: none;
+
+            &:focus {
+                border-color: $primaryColor;
+            }
+
+            &::placeholder {
+                color: $mediumGrayColor;
+                opacity: 1;
+            }
+            &:-ms-input-placeholder {
+                color: $mediumGrayColor;
+            }
+            &::-ms-input-placeholder {
+                color: $mediumGrayColor;
+            }
+
+        }
+
+        
+    }
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+
+        h2 {
+            align-items: center;
+            margin: 0;
+
+        }
+        
+        form {
+            border-style: solid;
+            border-color: $primaryColor;
+            border-width: 0.1em;
+            border-radius: 32px;
+            padding: 80px 40px;
+            margin-left: 10%;
+
+            .input {
+                input {
+                    width: 343px;
+                }
+            }
+        }
+    }
+}
