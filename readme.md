@@ -1,5 +1,5 @@
 ## Requisitos
-- [ ] Frontend
+- [x] Frontend
 - [x] Os módulos devem estar ordenados por ordem alfabética assim como as aulas ;
 - [x] Os módulos devem contabilizar o total de aulas referente;
 - [x] Para cadastro das aulas e módulos deverá haver um login administrativo aulas;
