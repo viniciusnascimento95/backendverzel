@@ -18,7 +18,7 @@ from django.urls import include, path
 
 # RestFramework
 from rest_framework import routers
-from rest_framework_simplejwt.views import TokenObtainPairView ,TokenRefreshView
+from rest_framework_simplejwt.views import TokenRefreshView
 
 from backend.apps.accounts.serializers import MyTokenObtainPairView
 
@@ -33,14 +33,13 @@ router.register(r'modules', ModuleViewSet)
 router.register(r'classes', ClassViewSet)
 
 urlpatterns = [
-    # path('api-auth/', include('rest_framework.urls')),    
+    # path('api-auth/', include('rest_framework.urls')),
+    # django admin
+    path('admin/', admin.site.urls),    
     path('api/', include(router.urls)),
     # api public
-    path('api/dashboard', DashboardAPIView.as_view()),
-    # django admin
-    path('admin/', admin.site.urls),  
+    path('api/dashboard', DashboardAPIView.as_view()),  
     # path('api/token' , TokenObtainPairView.as_view()),
-    path('api/token' , MyTokenObtainPairView.as_view()),
-    
+    path('api/token' , MyTokenObtainPairView.as_view()),    
     path('api/token/refresh' , TokenRefreshView.as_view()),
 ]

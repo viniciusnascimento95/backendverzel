@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardGroup } from 'react-bootstrap';
 
 class Dashboard extends React.Component {
+  
   // Constructor
   constructor(props) {
     super(props);
@@ -53,10 +54,7 @@ class Dashboard extends React.Component {
 
           ))}
         </CardGroup>
-
       </>
-
-
     );
   }
 }

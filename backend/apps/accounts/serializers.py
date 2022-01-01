@@ -4,6 +4,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
+    
     password = serializers.CharField(write_only=True)
     class Meta:
         model = User
@@ -16,6 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
         return user  
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    
     def validate(self, attrs):
         data = super().validate(attrs)
         refresh = self.get_token(self.user)

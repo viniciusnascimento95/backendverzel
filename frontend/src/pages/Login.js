@@ -7,8 +7,8 @@ export const Login = props => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [msgErro, setMsgErro] = useState('');
-    const [isLoading, setLoading] = useState(false);   
-
+    const [isLoading, setLoading] = useState(false); 
+    
     const sendLogin = async evento => {
         try {
             evento.preventDefault();
@@ -26,7 +26,7 @@ export const Login = props => {
                 localStorage.setItem('usernameLogin', responseApi.data.username);
                 props.setAccessToken(responseApi.data.access);
             }
-            console.log(responseApi);
+            // console.log(responseApi);
         } catch (e) {
             if(e?.response?.data?.detail){
                 setMsgErro(e.response.data.detail);
