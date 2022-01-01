@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: verzel_db
+    environment:    
+      # - POSTGRES_DB=verzel_db
+      # - POSTGRES_USER=verzel
+      # - POSTGRES_PASSWORD=ZBPYz1Y+C*
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=verzel_db
+      - MYSQL_USER=verzel
+      - MYSQL_PASSWORD=ZBPYz1Y+C*
+    ports:
+      - "3306:3306" 
+      
+    # volumes:
+    #   - ./docker/database:/var/lib/postgresql/data
+    #   - db:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: verzel_backend_app
+    entrypoint: /code/docker-entrypoint.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    links:
+      - db
+    depends_on:
+      - db
