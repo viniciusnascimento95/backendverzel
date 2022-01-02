@@ -18,7 +18,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,9 +29,6 @@ SECRET_KEY = 'django-insecure-a671yv@uvi_8yq!1uw(1%7-m(m3@12+-ecsqc=(jp^8+)ea5cu
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-
-# ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -136,7 +133,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
+TIME_ZONE = 'America/Sao_Paulo'
 
 TIME_ZONE = 'UTC'
 
@@ -147,8 +146,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'backend/static'),
+#     # '/var/www/static/',
+# )
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -6,8 +6,6 @@ ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'verzel_db',
         'USER': 'verzel',

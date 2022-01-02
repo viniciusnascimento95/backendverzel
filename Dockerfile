@@ -10,7 +10,9 @@ ENV DJANGO_SETTINGS_MODULE=backend.settings.production
 
 # create /code folder and set as current folder
 RUN mkdir /code
-WORKDIR /code
+
+# copy all source code to /code
+ADD Pipfile Pipfile.lock /code/
 
 # copy all source code to /code
 ADD . /code/
@@ -20,8 +22,16 @@ ADD . /code/
 
 # install pipenv package manager   
 RUN pip install --upgrade pip
+
+WORKDIR /code
 RUN python3 -m pip install pipenv
 
 # install all dependencies as base path packages
 RUN pipenv install --system
 # RUN pip install -r requirements.txt
+
+# Copy entrypoint
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+
+# Executable access to entrypoint script
+RUN chmod +x /docker-entrypoint.sh

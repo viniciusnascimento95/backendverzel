@@ -5,9 +5,6 @@ services:
     image: mysql:5.7
     container_name: verzel_db
     environment:    
-      # - POSTGRES_DB=verzel_db
-      # - POSTGRES_USER=verzel
-      # - POSTGRES_PASSWORD=ZBPYz1Y+C*
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=verzel_db
       - MYSQL_USER=verzel
