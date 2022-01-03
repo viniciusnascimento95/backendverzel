@@ -31,6 +31,8 @@ class Dashboard extends React.Component {
     if (!DataisLoaded) return <div>
       <h1> Carregando </h1> </div>;
 
+    if (items== '') return <div><h1>Não possui modulos cadastrados</h1></div>;
+
     return (
 
       <>
