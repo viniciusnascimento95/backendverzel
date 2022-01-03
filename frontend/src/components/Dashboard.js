@@ -1,8 +1,9 @@
 import React from "react";
+import moment from 'moment';
 import { Card, CardGroup } from 'react-bootstrap';
 
 class Dashboard extends React.Component {
-  
+
   // Constructor
   constructor(props) {
     super(props);
@@ -36,15 +37,15 @@ class Dashboard extends React.Component {
         <CardGroup>
           {items.map((item) => (
             <li key={item.id}>
-              <Card style={{ width: '25rem', padding: '20px', margin: '10px' }}>
+              <Card className="custom-card-dash">
                 <Card.Img variant="top" src="https://previews.123rf.com/images/chrisdorney/chrisdorney1306/chrisdorney130600109/20371194-example-rubber-stamp-over-a-white-background-.jpg" />
                 <Card.Body >
                   <Card.Title>{item.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">Total de Aulas: {item.qtd_classes}</Card.Subtitle>
+                  <Card.Subtitle className="mb-3 text-muted">Total de Aulas: {item.qtd_classes}</Card.Subtitle>
                   {item.classes.map((lesson) => (
-                    <ol key={lesson.id}>
+                    <ol key={lesson.id} style={{ padding: 0, paddingTop: 10 }}>
                       <Card.Text >
-                        {lesson.name} - Data : {lesson.date}
+                        {lesson.name} - Data : {moment(lesson.date).format('DD/MM/yyyy')}
                       </Card.Text>
                     </ol>
                   ))}

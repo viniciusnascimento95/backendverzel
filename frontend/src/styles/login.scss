@@ -21,6 +21,13 @@
         font-size: 17px;
     }
 
+    h3 {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 60px;
+        color: $primaryColor
+    }
+
     .input{
         display: flex;
         flex-direction: row;
@@ -72,12 +79,12 @@
         h2 {
             align-items: center;
             margin: 0;
-
         }
         
         form {
             border-style: solid;
             border-color: $primaryColor;
+            box-shadow: #5E49FF 0px 5px 15px;
             border-width: 0.1em;
             border-radius: 32px;
             padding: 80px 40px;
