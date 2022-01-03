@@ -35,7 +35,8 @@ router.register(r'classes', ClassViewSet)
 urlpatterns = [
     # path('api-auth/', include('rest_framework.urls')),
     # django admin
-    path('admin/', admin.site.urls),    
+    path('admin/', admin.site.urls),   
+    # path('', include(router.urls)), 
     path('api/', include(router.urls)),
     # api public
     path('api/dashboard', DashboardAPIView.as_view()),  
