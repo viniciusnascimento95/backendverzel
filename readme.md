@@ -52,6 +52,9 @@ Usando NPM
 
 http://localhost:3000/    
 
+#### login padrão admin / secret (ReactJS)
+![](https://github.com/viniciusnascimento95/backendverzel/blob/master/docs/Login.png)
+
 #### Resources API 
 
 ```json
@@ -62,6 +65,14 @@ http://localhost:3000/
 }
 ```
 Obs: Todas as rotas estão usando token de autenticação JWT
+
+#### Resources API exemplos
+
+![](https://github.com/viniciusnascimento95/backendverzel/blob/master/docs/CreateModule.png)
+Criando registro de Modulo
+
+![](https://github.com/viniciusnascimento95/backendverzel/blob/master/docs/CreateClass.png)
+Criando registro de Aula 
 
 ## Métodos
 Requisições para a API devem seguir os padrões:
