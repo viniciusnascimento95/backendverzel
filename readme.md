@@ -61,7 +61,7 @@ http://localhost:3000/
   "classes": "http://127.0.0.1:8000/api/classes/"
 }
 ```
-obs: Todas as rotas estão usando token JWT
+Obs: Todas as rotas estão usando token de autenticação JWT
 
 ## Métodos
 Requisições para a API devem seguir os padrões:
