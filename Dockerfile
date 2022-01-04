@@ -11,6 +11,8 @@ ENV DJANGO_SETTINGS_MODULE=backend.settings.production
 # create /code folder and set as current folder
 RUN mkdir /code
 
+WORKDIR /code
+
 # copy all source code to /code
 ADD Pipfile Pipfile.lock /code/
 
@@ -23,7 +25,6 @@ ADD . /code/
 # install pipenv package manager   
 RUN pip install --upgrade pip
 
-WORKDIR /code
 RUN python3 -m pip install pipenv
 
 # install all dependencies as base path packages
